@@ -75,6 +75,7 @@ I have only tested MP3 and FLAC files, but it should prolly work with other form
 
 #### details.json
 
+This file is not strictly necessary, unless you want to use the AI DJ dialogue.  
 The `details.json` file contains the following:
 
 ```json
