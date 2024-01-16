@@ -20,19 +20,35 @@
 
 - some PHP, i dunno
 - [getID3](https://github.com/JamesHeinrich/getID3), for loading metadata from audio files (tracks, artists, etc)
+  - put this in the `vendor` folder
+  - if installing via composer, the "project root" is the `public` folder
+  - for clarity, the structure should look like:
+
+    ```txt
+    public
+    └── vendor
+        └── getid3 (the one you download)
+            ├── demos
+            ├── getid3
+            ¦
+    ```
+
 - [ElevenLabs](https://elevenlabs.io/) API key
   - This is used to generate the DJ dialogue
   - ❗ AI voice IDs are currently hardcoded, so you'll need to change the code if you want to use a different voice ❗
+- tee
+    - Either from cygwin, git, [tee](https://github.com/dEajL3kA/tee-win32/), whatever
 - questionable morals
 
 ## how to use
 
 1. clone the repo
-2. add your music to the `audio` folder, in the format seen below
-3. add a logo for the station in the same folder, in the format seen below
-4. run the appropriate `.bat` file depending on your use case (see below)
+1. fill out the `.env` file (see below)
+1. add your music to the `audio` folder, in the format seen below
+1. add a logo for the station in the same folder, in the format seen below
+1. run the appropriate `.bat` file depending on your use case (see below)
    - This will automatically open a browser window to the correct address
-5. enjoy!
+1. enjoy!
 
 ### starting a server
 
@@ -103,7 +119,14 @@ The `details.json` file contains the following:
 
 ## .env
 
-A .env file is required in the root directory of the project. It currently has the following variables:
+A .env file is required in the root directory of the project. It looks like this:
+
+```py
+XIAPIKEY="YOUR_API_KEY"
+LOCALIP="YOUR_LOCAL_IP"
+REMOTEIP="YOUR_REMOTE_IP"
+PORT=8054
+```
 
 - `XIAPIKEY` - the API key for [ElevenLabs](https://elevenlabs.io/)
   - If you don't have one, you can leave this blank, but the DJ dialogue will not work
