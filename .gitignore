@@ -1,0 +1,11 @@
+# files
+.env
+port_*.bat
+
+# folder contents
+public/audio/*/
+public/gen/*.mp3
+logs/*.log
+
+public/vendor/*/
+public/vendor/*.php
