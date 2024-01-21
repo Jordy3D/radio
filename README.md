@@ -18,26 +18,31 @@
 
 ## requirements
 
+### software
+
 - some PHP, i dunno
+- tee, for logging
+  - Either from cygwin, git, [tee](https://github.com/dEajL3kA/tee-win32/), whatever
+
+### packages
+
 - [getID3](https://github.com/JamesHeinrich/getID3), for loading metadata from audio files (tracks, artists, etc)
   - put this in the `vendor` folder
   - if installing via composer, the "project root" is the `public` folder
   - for clarity, the structure should look like:
 
-    ```txt
-    public
-    └── vendor
-        └── getid3 (the one you download)
-            ├── demos
-            ├── getid3
-            ¦
-    ```
+```txt
+public
+└── vendor
+    └── getid3 (the one you download)
+        ├── demos
+        ├── getid3
+        ¦
+```
 
-- [ElevenLabs](https://elevenlabs.io/) API key
-  - This is used to generate the DJ dialogue
-  - ❗ AI voice IDs are currently hardcoded, so you'll need to change the code if you want to use a different voice ❗
-- tee
-    - Either from cygwin, git, [tee](https://github.com/dEajL3kA/tee-win32/), whatever
+### other
+
+- [ElevenLabs](https://elevenlabs.io/) API key, to generate the DJ dialogue
 - questionable morals
 
 ## how to use
