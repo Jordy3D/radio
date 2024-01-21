@@ -48,10 +48,10 @@ public
 ## how to use
 
 1. clone the repo
-1. fill out the `.env` file (see below)
-1. add your music to the `audio` folder, in the format seen below
-1. add a logo for the station in the same folder, in the format seen below
-1. run the appropriate `.bat` file depending on your use case (see below)
+1. fill out the [`.env` file] ([see below](https://github.com/Jordy3D/radio#env))
+1. add your music to the `audio` folder, in the format [seen below](https://github.com/Jordy3D/radio#structure)
+1. add a logo for the station in the same folder, in the format [seen below](https://github.com/Jordy3D/radio#structure)
+1. run the appropriate `.bat` file depending on your use case ([see below](https://github.com/Jordy3D/radio#starting-a-server))
    - This will automatically open a browser window to the correct address
 1. enjoy!
 
