@@ -71,6 +71,14 @@ masterAudio.addEventListener("ended", () => {
         playRandomSong();
 });
 
+// on pause
+masterAudio.addEventListener("pause", () => {
+    updatePlayButtonIcon();
+});
+masterAudio.addEventListener("play", () => {
+    updatePlayButtonIcon();
+});
+
 // spinner
 spinner.addEventListener("click", () => {
     nextStation();
@@ -78,6 +86,11 @@ spinner.addEventListener("click", () => {
 spinner.addEventListener("auxclick", (e) => {
     if (e.button === 1)
         spinner.classList.toggle("top");
+});
+
+// if the keyboard's skip button is pressed, skip the song
+navigator.mediaSession.setActionHandler('nexttrack', function () {
+    playNextSong(true);
 });
 
 //  █████╗ ██╗   ██╗██████╗ ██╗ ██████╗ 
@@ -164,14 +177,13 @@ function playNextSong(skipButton = false) {
     }
 
     // if this is not the first or last song in the playlist, and DJ is enabled
-    if (currentSongIndex !== -1 && currentSongIndex !== playlist.length - 1 && djEnabled)
-    {
+    if (currentSongIndex !== -1 && currentSongIndex !== playlist.length - 1 && djEnabled) {
         if (!skipButton || djOnSkip)        // if skip wasn't pressed or skips are allowed
             if (Math.random() < djChance)   // 10% chance to generate a DJ line
                 generateDJLine();
     }
     playSong(nextSong);
-    
+
     localStorage.setItem("songId", nextSong);
 }
 
@@ -197,14 +209,22 @@ function playToggle() {
 
 function updatePlayButtonIcon() {
     // if master audio is paused, set play button to play icon
-    playButton.innerText = masterAudio.paused ? "▶" : "⏸";
-    playButton.classList.toggle("play");
-    playButton.classList.toggle("pause");
+    let isPaused = masterAudio.paused;
+    playButton.innerText = isPaused ? "▶" : "⏸";
+
+    // add or remove play/pause class based on if audio is paused
+    if (isPaused) {
+        playButton.classList.add("play");
+        playButton.classList.remove("pause");
+    }
+    else {
+        playButton.classList.add("pause");
+        playButton.classList.remove("play");
+    }
 }
 
-function updatePlayingDetails(songId="", title = "", artist = "") {
-    if (songId !== "")
-    {
+function updatePlayingDetails(songId = "", title = "", artist = "") {
+    if (songId !== "") {
         // get song from songs array
         const song = songs.find(song => song.id === songId);
         title = song.name;
