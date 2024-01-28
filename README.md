@@ -1,8 +1,19 @@
 # radio
 
- a self-hostable internet radio
+a self-hostable internet radio
 
-## features
+## table of contents
+
+<div align="center">
+
+|  |
+|:---:|
+| [features](#features-) \| [requirements](#requirements-) \| [how to use](#how-to-use-) \| [what does a station look like?](#what-does-a-station-look-like-) \| [.env](#env-) \| [motd](#motd-)  
+[todo](#todo-) \| [notes](#notes-) \| [known issues](#known-issues-) |
+
+</div>
+
+## features [▴](#table-of-contents)
 
 - Play music from a local folder
 - Multiple station support
@@ -16,7 +27,7 @@
   - Uses ElevenLabs to generate the dialogue
 - Spaghetti code
 
-## requirements
+## requirements [▴](#table-of-contents)
 
 ### software
 
@@ -45,7 +56,7 @@ public
 - [ElevenLabs](https://elevenlabs.io/) API key, to generate the DJ dialogue
 - questionable morals
 
-## how to use
+## how to use [▴](#table-of-contents)
 
 1. clone the repo
 1. fill out the [`.env` file] ([see below](https://github.com/Jordy3D/radio#env))
@@ -65,7 +76,7 @@ There are three `.bat` files included in the repo:
 
 If you accidentally close the server window, you can restart it by running the appropriate OPEN `.bat` file.
 
-## what does a station look like?
+## what does a station look like? [▴](#table-of-contents)
 
 ### structure
 
@@ -122,7 +133,7 @@ The `details.json` file contains the following:
     - `<NEXTSONG>`
     - `<NEXTARTIST>`
 
-## .env
+## .env [▴](#table-of-contents)
 
 A .env file is required in the root directory of the project. It looks like this:
 
@@ -141,14 +152,54 @@ PORT=8054
   - This is used for starting a remote server to test on other devices on the internet
 - `PORT` - the port that the server will run on
 
-## todo
+## motd [▴](#table-of-contents)
+
+You can set "MOTD"s or splashes in the file called `motd.txt` in the `public` folder.  
+The file is read as one message per line, and will cycle through them. Blank lines are ignored.
+
+If you wish to write notes about groups of messages or comment or something, you can use `;` to comment out a line.
+
+### modifiers
+
+#### effects
+
+*note: you can't currently combine effects.*  
+
+You can add effects to the MOTD by using the following syntax:
+
+```txt
+<effect>message</effect>
+```
+
+The currently supported effects are:
+
+- `rainbow` - scrolls a rainbow across the text
+- `wiggle` - makes the text wiggle
+- `glitch` - makes the text appear glitchy
+- `discord` - adds a profile picture and small Discord-themed pill body
+  - the "profile picture" is set as discord.png in the `img` folder
+
+#### variables
+
+You can also add variables to the MOTD by using the following syntax:
+
+```txt
+<VAR>
+```
+
+The currently supported variables are:
+
+- `STATION` - the name of the current station
+- `TIME` - the current time
+
+## todo [▴](#table-of-contents)
 
 This is a list of things I want to add to the radio.  
 They're in no particular order, and there's no guarantee that I'll actually do them.
 
 - [X] Move AI DJ info to a JSON file
 - [ ] Fix routing (currently non-functional after swapping to a /public folder)
-- [ ] Improve Station switching
+- [X] Improve Station switching
 - [ ] Add a dynamic check for updates to:
   - [ ] stations
   - [ ] tracks
@@ -156,9 +207,9 @@ They're in no particular order, and there's no guarantee that I'll actually do t
   - [ ] DJ dialogue
 - [ ] Last.fm integration
 - [ ] Make animations coded rather than CSS (for consistency with the MOTD)
-- [ ] probably a lot more, I don't know, I'm not a barber
+- probably a lot more...
 
-## notes
+## notes [▴](#table-of-contents)
 
 ### the server itself
 
@@ -172,7 +223,7 @@ For remote use, you'll need to set up port forwarding on your router.
 
 If you're using a VPN, you'll need to set up split-tunneling or port forwarding on the VPN, depending on whatever.
 
-## known issues
+## known issues [▴](#table-of-contents)
 
 1. The router doesn't work properly. I don't know how it really works with defining a root directory, so I just left it as is.  
 It basically means that you can access the radio from any URL starting with the main one, rather than from /radio or something. It's not a huge issue, it's just kinda gross.

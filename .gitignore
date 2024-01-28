@@ -9,3 +9,4 @@ logs/*.log
 
 public/vendor/*/
 public/vendor/*.php
+public/audio/convertToMP3.bat

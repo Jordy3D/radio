@@ -86,6 +86,7 @@ djAudio.addEventListener("play", () => {
 
     masterAudio.pause();
     skipButton.disabled = true;
+    playButton.disabled = true;
 
     if (debug) console.log(`Playing audio with a boost of ${currentStationDJ.djVolumeBoost}`)
     djAudio.volume = masterAudio.volume * currentStationDJ.djVolumeBoost;
@@ -93,7 +94,9 @@ djAudio.addEventListener("play", () => {
 
 djAudio.addEventListener("ended", () => {
     skipButton.disabled = false;
+    playButton.disabled = false;
     masterAudio.play();
+    
     updatePlayingDetails(localStorage.getItem("songId"));
 });
 

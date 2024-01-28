@@ -14,12 +14,13 @@
     margin: 0;
 }
 
-html, body
-{
+html,
+body {
     overflow: hidden;
 }
 
-#masterAudio, #djAudio {
+#masterAudio,
+#djAudio {
     display: none;
 }
 
@@ -98,8 +99,7 @@ body {
 ╚══════╝╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝
 */
 
-.spinner-container
-{
+.spinner-container {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -142,9 +142,8 @@ body {
     }
 }
 
-.spinner.top img
-{
-  animation: top 5s linear infinite;
+.spinner.top img {
+    animation: top 5s linear infinite;
 }
 
 @keyframes top {
@@ -154,6 +153,89 @@ body {
 
     50% {
         transform: rotateY(90deg);
+    }
+}
+
+/* Station Selector */
+.station-orbital {
+    padding-bottom: max(calc(30vh + 15vw), calc(300px + 15vw));
+
+    pointer-events: none;
+}
+
+
+.station-orbital img {
+    width: 10vw;
+    min-width: 100px;
+    height: auto;
+
+    max-width: unset;
+
+    animation: none;
+    pointer-events: auto;
+
+    transition: all 100ms ease-in-out;
+}
+
+.station-orbital img:hover {
+    transform: scale(1.1);
+
+    transition: all 200ms ease-in-out;
+}
+
+/* add an animation to the station orbital's bottom padding when it is created*/
+.station-orbital {
+    animation: orbital 500ms ease-in-out;
+}
+
+@keyframes orbital {
+    0% {
+        padding-bottom: 0;
+        opacity: 0;
+    }
+
+    95% {
+        padding-bottom: max(calc(30vw + 16vw), calc(300px + 16vw));
+    }
+
+    100% {
+        padding-bottom: max(calc(30vw + 15vw), calc(300px + 15vw));
+        opacity: 1;
+    }
+}
+
+/* if height is less than 800px */
+@media (max-height: 800px) {
+    .orbital {
+        width: 30vw;
+        height: 100%;
+        padding: 0 !important;
+
+        position: absolute;
+        top: 0 !important;
+        left: 0 !important;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    .station-orbital {
+        top: 0 !important;
+        left: 0 !important;
+        padding: 0 !important;
+        transform: none !important;
+
+        position: unset !important;
+        height: unset !important;
+    }
+
+    .station-image-container {
+        transform: none !important;
+    }
+
+    .station-orbital img {
+        width: 20vh;
     }
 }
 
@@ -486,6 +568,78 @@ body {
     width: 25px;
     border-radius: 50%;
     background: red;
-    background-image: url(../img/logo.png);
+    background-image: url(../img/discord.png);
     background-size: 100%;
+}
+
+/* wiggle */
+/* .wiggle contains w1 and w2, and they must wiggle, moving up, down, left, and right */
+.wiggle {
+    display: flex;
+    position: relative;
+
+}
+
+.wiggle w1 {
+    animation: wiggle 1s infinite ease-in-out;
+}
+
+.wiggle w2 {
+    animation: wiggle 1s infinite ease-in-out 0.5s;
+}
+
+:root {
+    --wiggle: 2px;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: translate(calc(-1 * var(--wiggle)), calc(-1 * var(--wiggle)));
+    }
+
+    25% {
+        transform: translate(calc(var(--wiggle)), calc(var(--wiggle)));
+    }
+
+    50% {
+        transform: translate(calc(-1 * var(--wiggle), calc(var(--wiggle))));
+    }
+
+    75% {
+        transform: translate(calc(-1 * var(--wiggle)), calc(var(--wiggle)));
+    }
+
+    100% {
+        transform: translate(calc(-1 * var(--wiggle)), calc(-1 * var(--wiggle)));
+    }
+}
+
+/* rainbow text */
+.rainbow {
+    background:
+        linear-gradient(to left, rgba(255, 0, 0, 1) 0%, rgba(255, 154, 0, 1) 10%, rgba(208, 222, 33, 1) 20%, rgba(79, 220, 74, 1) 30%, rgba(63, 218, 216, 1) 40%, rgba(47, 201, 226, 1) 50%, rgba(28, 127, 238, 1) 60%, rgba(95, 21, 242, 1) 70%, rgba(186, 12, 248, 1) 80%, rgba(251, 7, 217, 1) 90%, rgba(255, 0, 0, 1) 100%) 0 0/100% 200%;
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+
+    filter: saturate(2);
+
+    animation: rainbow 5s infinite linear;
+}
+
+@keyframes rainbow {
+    to {
+        background-position: -200% 0;
+    }
+}
+
+
+
+/* Test disable movement */
+REMOVEME.notamarquee {
+    animation: none !important;
+    ;
+    left: 0 !important;
 }

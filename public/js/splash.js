@@ -2,7 +2,7 @@
 var baneSplash = document.querySelector(".baneSplash");
 
 baneSplash.addEventListener("click", () => {
-    if (debug) console.log("fade out bane splash");
+    if (!loaded) return;
 
     baneSplash.style.opacity = 1;
     baneSplash.style.pointerEvents = "none";
@@ -17,7 +17,7 @@ baneSplash.addEventListener("click", () => {
             baneSplash.hidden = true;
             baneSplash.remove();
 
-            loaded = true;
+            active = true;
             startPlaylist();
 
             updateMotd(0); // set motd to first motd in motds array

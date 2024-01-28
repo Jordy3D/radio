@@ -15,6 +15,16 @@
     <meta property="og:image" content="https://jordy3d.github.io/files/logo.png">
     <!-- <meta property="og:url" content="https://jordy3d.github.io/dont/notfollowup"> -->
     <meta property="og:type" content="website">
+
+    <script>
+        var loaded = false; // content has loaded from server
+        var active = false; // the user clicked the splash screen
+
+        function setAsLoaded() {
+            document.querySelector('.clicktostart').removeAttribute('hidden');
+            loaded = true;
+        }
+    </script>
 </head>
 
 <body>
@@ -79,6 +89,7 @@
 
     <script src="js/script.js"></script>
     <script src="js/splash.js"></script>
+    <script src="js/spinner.js"></script>
     <script src="js/dj.js"></script>
 </body>
 

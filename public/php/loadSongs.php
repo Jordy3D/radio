@@ -163,7 +163,8 @@
     </script>";
 
     // remove the hidden attribute from .clicktostart
-    echo "<script>
-        document.querySelector('.clicktostart').removeAttribute('hidden');
-    </script>";
-?>
+    echo <<<LOADED
+    <script>
+        setAsLoaded();
+    </script>;
+    LOADED;

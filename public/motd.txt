@@ -1,9 +1,51 @@
-Welcome to Bane//Radio!
-This is a work in progress, so expect <span class="glitch" data-text="bugs">bugs</span>!
-If you find any <span class="glitch" data-text="bugs">bugs</span>, tell me on <span class="discord">Discord</span>!
+; ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+; ┃ All text starting with a semicolon   ┃ 
+; ┃ is a comment and will not be loaded. ┃
+; ┃ Empty lines will not be loaded.      ┃
+; ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Welcome to <rainbow>Bane//Radio</rainbow>!
+
+; ┏━━━━━━━━━━━━━━━━━━━━━┓
+; ┃ General Information ┃
+; ┗━━━━━━━━━━━━━━━━━━━━━┛
+
+Do you <glitch text="hate">love</glitch> Bane//Radio?
+This is a work in progress, so expect <glitch>bugs</glitch>!
+If you find any <glitch>bugs</glitch>, tell me on <discord>Discord</discord>!
+Middle-click the spinner for a surprise!
+You might hear someone you don't expect between songs...
+Did you know that the base of this site was made in 3 hours?
+Did you know that this was made in part because another site lacks a volume slider?
+The time is currently <TIME>!
+
+; ┏━━━━━━━┓
+; ┃ Jokes ┃
+; ┗━━━━━━━┛
+
 Remember: Friendly fire isn't!
 Do you read me?
 Is this thing on?
 I've been trapped in this radio for so long, send help!
-<span class="glitch" data-text="Look at me wiggle!">Look at me wiggle!</span>
-Middle-click the spinner for a surprise!
+<wiggle>Look at me wiggle!</wiggle>
+<rainbow>══════════ Wow! Double Rainbow! What can it mean? ══════════</rainbow>
+So much to do, so much to see... So what's wrong with taking the backstreets?
+I swear, this is not a <glitch>virus</glitch>!
+I don't know what to put here, so you get this instead!
+Dame da ne...
+°•<><&nbsp;&nbsp;&nbsp;&nbsp;><>•°&nbsp;&nbsp;&nbsp;feesh
+<*͜𒅋 
+100% dragon-free!
+No! Please don't click me! Please!
+
+; ┏━━━━━━━━━━┓
+; ┃ Stations ┃
+; ┗━━━━━━━━━━┛
+
+You are now listening to <STATION>!
+I recommend CityBurst Radio!
+I recommend Experience Deculture!
+I recommend Strayarr!
+I recommend Trouble Clef!
+I recommend <glitch>T̶̨̧̼͇̺̼̹̭̥̯̙̭̪͖̰̭̣̼͕̥̗̹̠̪͎̮͐̒̓̔͋̀̓̍̃͗̔̂̾͆̔̀̿̉́̈́̈́͘͘͜Ḩ̶̧̢̨̡̡̢̢̢̛̱̻̪͓̺̭̭͚̟̖̗̬̟̬̗̭̲͚̭͓͕̻̲̫̤͉̘̦̺̜̻̦̹͙͍̲̻͍̺̅̉͆̿͗͊̈̓͆̇̓̍̆̉̑̅́̓̌͋͆͆́͋̔͒̃̿̈́͂͘͜͝͠͠Ę̷̧͕̠̙̞͓̣̩̥͓͍̭̱̲̟̮̗̳̻̼̝̒̐̅̿̈́͋͂͑́̄̏̀͗͆̍̾́͘̕͜ͅ ̴̡̧̢̧̨̡̛̛͙̹̻̪͍̟͓̱͎̟̞͎̣̲̣̜̟̠̩̦̱͙̞͈͔͙͉̳̝̂̀͒͌̒̇͆̆̄̑͛͑̍͆́͂̃̊̆̑̎͑͊͒̉̀͌̈́̐͛̚͠͝ͅG̴̛̛̪̲̗̩͕͉̗͎̻̙̎͂͂̅̒̄͊̌̇̈́̽̌͑̃̏͐͛͑̈́̓̀́̾͂̎̇̈͗̈́͑̾͂́̾̆̕͘̚͝͝R̴̢̨̛̼͖͙̟̼̯̻͕̬͇̹͈̝̹̭͕̯̖͖̎̂͊̈́̐̾̋͑͌̓̂̾̂̋̄͌̒̊̍̂̂͑͑̎̒̆͛̓̇̃͋̑̅͒̅̀͛̅̕͘͠͠ͅE̵̢̡͓̺̲͖̗̤͇̥̬̳̱̘̣̲̰̖̞̙͔̻̰͍̜̯̙̺̣̮̪̤̝̫͉̞͈̠͙̹͓̫̔́͋̉͆̂̅͋̏͗̌͐́̌̏̊̕̕͝ͅḀ̷̡̲̥͓̞̳͍͍͖͉̤̬̘͍̜̞̱͔̫͓̫̥͑̀̐̔̾̑͑̏̅̍̀̔̓̉̆̇͐̿̓̀̌̊̀͒͊̒̀̊̀̑̒̃͊̚͜͠Ț̴̨̧̲̖̰̬̳͉̥̲̬̹̠̗̝͈͔̟͚͓̬͔͉̙̹͎̯̯͚͎͎̮͂ ̵̜͉̻̗̜͓̦̐͐̀̽͊̈́̽̓͑̉̌̈́͝O̸̡̝̳̯͎͇̯̰̗̭͈̼̱̜̊͌̈͘͜N̷̢̡̦͕̖͓̥̯͉̯͖̭̱͕̬͕̲̯̱̭̙̯̝̣͈̜̻̹̥̞͈͔̼̙͙̞̲̯͕̟̈̎́̈́̔̑̓̌͛̄̓̈͌̏̓̄͆͘͜͝͠ͅͅE̴̢̨̟̤̯̱̐̓͆͌͗́͗̽͐̊̑̈́͛̉̏̈́̔̂͘̕</glitch>!
+

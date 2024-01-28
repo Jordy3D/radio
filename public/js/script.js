@@ -11,6 +11,8 @@ const djAudio = document.getElementById("djAudio");
 const debug = false;
 const djEnabled = true;
 
+const midPoint = 0.5;
+
 // set dj values to natural or localhost values
 var isLocal = window.location.hostname === "localhost";
 const djChance = (isLocal ? 0.3 : 0.1);
@@ -27,7 +29,7 @@ const skipButton = document.getElementById("skipButton");
 const spinner = document.querySelector(".spinner");
 
 // global vars
-var loaded = false;
+// var loaded = false;
 var station = null;
 var songs = null;
 
@@ -37,6 +39,7 @@ var inPlaylist = true;
 // list all found station names
 if (debug) {
     console.log("stations found:");
+    // stations gets added by the PHP
     stations.forEach(station => console.log(station.name));
 }
 
@@ -59,7 +62,12 @@ function loadSavedData() {
 }
 
 
-// event listeners
+// ███████╗██╗   ██╗███████╗███╗   ██╗████████╗███████╗
+// ██╔════╝██║   ██║██╔════╝████╗  ██║╚══██╔══╝██╔════╝
+// █████╗  ██║   ██║█████╗  ██╔██╗ ██║   ██║   ███████╗
+// ██╔══╝  ╚██╗ ██╔╝██╔══╝  ██║╚██╗██║   ██║   ╚════██║
+// ███████╗ ╚████╔╝ ███████╗██║ ╚████║   ██║   ███████║
+// ╚══════╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝
 
 // update progress bar on time update or new song
 masterAudio.addEventListener("timeupdate", updateProgress);
@@ -71,27 +79,28 @@ masterAudio.addEventListener("ended", () => {
         playRandomSong();
 });
 
-// on pause
-masterAudio.addEventListener("pause", () => {
-    updatePlayButtonIcon();
-});
-masterAudio.addEventListener("play", () => {
-    updatePlayButtonIcon();
+// fire event when progress hit mid point
+masterAudio.addEventListener("timeupdate", () => {
+    if (masterAudio.currentTime >= masterAudio.duration * midPoint) {
+        if (debug) console.log("mid point reached");
+        
+        // TODO: add mid point event (ie, lastfm scrobble)
+    }
 });
 
+// on pause
+masterAudio.addEventListener("pause", updatePlayButtonIcon);
+masterAudio.addEventListener("play", updatePlayButtonIcon);
+
 // spinner
-spinner.addEventListener("click", () => {
-    nextStation();
-});
+// spinner.addEventListener("click", nextStation);
 spinner.addEventListener("auxclick", (e) => {
     if (e.button === 1)
         spinner.classList.toggle("top");
 });
 
 // if the keyboard's skip button is pressed, skip the song
-navigator.mediaSession.setActionHandler('nexttrack', function () {
-    playNextSong(true);
-});
+navigator.mediaSession.setActionHandler('nexttrack', () => playNextSong(true));
 
 //  █████╗ ██╗   ██╗██████╗ ██╗ ██████╗ 
 // ██╔══██╗██║   ██║██╔══██╗██║██╔═══██╗
@@ -208,19 +217,11 @@ function playToggle() {
 }
 
 function updatePlayButtonIcon() {
-    // if master audio is paused, set play button to play icon
     let isPaused = masterAudio.paused;
     playButton.innerText = isPaused ? "▶" : "⏸";
 
-    // add or remove play/pause class based on if audio is paused
-    if (isPaused) {
-        playButton.classList.add("play");
-        playButton.classList.remove("pause");
-    }
-    else {
-        playButton.classList.add("pause");
-        playButton.classList.remove("play");
-    }
+    playButton.classList.toggle("play", isPaused);
+    playButton.classList.toggle("pause", !isPaused);
 }
 
 function updatePlayingDetails(songId = "", title = "", artist = "") {
@@ -273,7 +274,7 @@ function createPlaylist() {
 }
 
 function startPlaylist() {
-    if (!loaded) return;
+    if (!active) return;
 
     createPlaylist();
     playSong(playlist[0]);
