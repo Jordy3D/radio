@@ -207,17 +207,46 @@ body {
 /* if height is less than 800px */
 @media (max-height: 800px) {
     .orbital {
-        width: 30vw;
-        height: 100%;
-        padding: 0 !important;
+        width: fit-content;
+        max-width: 30vw;
+        /* height: calc(100vh - 100px); */
 
         position: absolute;
-        top: 0 !important;
+        top: 50px !important;
+        bottom: 50px !important;
         left: 0 !important;
+
+
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
 
         display: flex;
         flex-wrap: wrap;
-        align-content: center;
+        align-content: flex-start;
+        justify-content: space-between;
+        padding: 0 1ch;
+
+        overflow-y: scroll;
+
+        animation: slide-in 200ms ease-in-out;
+    }
+    .orbital::after {
+        content: "";
+        flex: auto;
+      }
+
+    .orbital::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    @keyframes slide-in {
+        from {
+            transform: translatex(-100%);
+        }
+
+        top {
+            transform: translatex(0%);
+        }
     }
 
     .station-orbital {
@@ -228,14 +257,22 @@ body {
 
         position: unset !important;
         height: unset !important;
+        
+        width: 20vw;
+        width: min(20vw, 20vh);
     }
 
     .station-image-container {
         transform: none !important;
+        width: 20vw;
+        width: min(20vw, 20vh);
     }
 
     .station-orbital img {
-        width: 20vh;
+        width: 20vw;
+        max-width: 20vh;
+        /* whichever is smaller */
+        width: min(20vw, 20vh);
     }
 }
 
